@@ -1,40 +1,59 @@
-# Práctica 1: Introducción a Kotlin
+# **Práctica 2: Programación Orientada a Objetos Kotlin**
 
-## Descripción
-Esta práctica consiste en resolver 4 ejercicios fundamentales utilizando el lenguaje de programación Kotlin para familiarizarse con la sintaxis básica, estructuras de control, funciones y manejo de entrada/salida.
+**Descripción**
+Esta práctica consiste en resolver 4 ejercicios utilizando conceptos de Programación Orientada a Objetos en Kotlin, implementando clases, herencia, polimorfismo, encapsulamiento e interfaces.
 
-## Ejercicios Implementados
+**Ejercicios Implementados**
 
-### 1. Evaluación de Empleados (EvaluacionEmpleados.kt)
-Sistema que evalúa el rendimiento de empleados basado en una puntuación de 0-10 y calcula el dinero adicional que recibirán según su nivel de rendimiento.
+**1. Cuenta Bancaria (CuentaBancaria.kt)**
+Sistema de gestión de cuenta bancaria con saldo y límite de retiro, implementa validaciones de datos mediante setters personalizados.
 
-**Niveles de Rendimiento:**
-- Inaceptable: 0-3 puntos
-- Aceptable: 4-6 puntos  
-- Meritorio: 7-10 puntos
+**Características:**
+* Validación de saldo no negativo
+* Control de límite de retiro
+* Métodos para depósito y retiro
 
-### 2. Piedra, Papel, Tijera (PiedraPapelTijera.kt)
-Implementación del clásico juego donde el usuario compite contra la computadora que elige aleatoriamente su jugada.
+**2. Producto (Producto.kt)**
+Clase para gestionar productos con precio y descuento aplicable, calcula el precio final después de aplicar descuentos.
 
-### 3. Calculadora Elemental (CalculadoraElemental.kt)
-Calculadora básica con operaciones fundamentales (suma, resta, multiplicación, división) implementada con un menú interactivo.
+**Características:**
+* Validación de precio no negativo
+* Control de descuento entre 0-100%
+* Cálculo automático de precio final
 
-### 4. Adivina el Número (AdivinaNumero.kt)
-Juego donde el usuario debe adivinar un número aleatorio entre 1 y 30 en máximo 5 intentos, con pistas de si el número es mayor o menor.
+**3. Figuras Geométricas (Figuras.kt)**
+Sistema de figuras geométricas con clase abstracta Shape y subclases Cuadrado, Círculo y Rectángulo que heredan métodos para calcular área y perímetro.
 
-### Buenas Prácticas Implementadas
-- ✅ Uso de funciones para modularizar el código
-- ✅ Validación de entrada del usuario
-- ✅ Manejo de excepciones
-- ✅ Código comentado y documentado
-- ✅ Estructura clara y organizada
+**Características:**
+* Clase abstracta base con propiedades y métodos abstractos
+* Constructores primarios y secundarios
+* Polimorfismo en métodos de cálculo
 
-### Funcionalidades Adicionales
-- Entrada de datos
-- Manejo de errores y excepciones
-- Interfaz de usuario intuitiva
-- Mensajes informativos y claros
-- Opción de repetir juegos/operaciones
+**4. Sistema de Gestión de Biblioteca (SistemaBiblioteca.kt)**
+Sistema completo de biblioteca con clases Material (abstracta), Libro, Revista, Usuario e interfaz IBiblioteca implementada por la clase Biblioteca.
 
-## Autor
-Piero Adrián Delgado Chipana
+**Características:**
+* Herencia con clases abstractas
+* Data class para usuarios
+* Interfaz con métodos de biblioteca
+* Sistema de préstamos y devoluciones
+
+**Buenas Prácticas Implementadas**
+* ✅ Encapsulamiento con propiedades privadas
+* ✅ Validación de datos en setters
+* ✅ Herencia y polimorfismo
+* ✅ Clases abstractas e interfaces
+* ✅ Manejo de excepciones
+* ✅ Código comentado y documentado
+* ✅ Estructura clara y organizada
+
+**Funcionalidades Adicionales**
+* Validaciones robustas en todas las operaciones
+* Sistema de búsqueda de materiales
+* Estadísticas de biblioteca
+* Límites de préstamo por usuario
+* Manejo de errores con mensajes informativos
+* Múltiples constructores para flexibilidad
+
+**Autor**
+Delgado Chipana Piero Adrián
