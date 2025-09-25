@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFF3E0">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDITOR DE NOTAS"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#E65100"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escribe tu nota aquí:"
+        android:textSize="16sp"
+        android:textColor="#BF360C"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etNota"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="Comienza a escribir tu nota..."
+        android:gravity="top|start"
+        android:inputType="textMultiLine|textCapSentences"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="#3E2723"
+        android:elevation="2dp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnCompartir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="COMPARTIR"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:backgroundTint="#FF5722" />
+
+</LinearLayout>
