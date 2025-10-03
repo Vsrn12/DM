@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFF8E1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Paso 1: Selecciona tu comida"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#F57C00"
+        android:layout_marginBottom="32dp" />
+
+    <RadioGroup
+        android:id="@+id/rgComidas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp">
+
+        <RadioButton
+            android:id="@+id/rbPizza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Taco"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="12dp" />
+
+        <RadioButton
+            android:id="@+id/rbHamburguesa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Hamburguesa"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="12dp" />
+
+        <RadioButton
+            android:id="@+id/rbEnsalada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Pollo"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:background="#FFFFFF" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSiguiente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGUIENTE ➡️"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:backgroundTint="#FF9800" />
+
+</LinearLayout>
