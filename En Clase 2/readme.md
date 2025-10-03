@@ -19,12 +19,19 @@ Implementación completa de la gestión de elementos de un `RecyclerView` a trav
 
 ### Funcionalidades:
 ✅ Detección de `long click` en el `ViewHolder`.
+
 ✅ Uso de `AlertDialog.Builder().setItems()` para crear el menú contextual.
+
 ✅ Implementación de `AlertDialog.Builder().setView()` para mostrar el formulario de edición.
+
 ✅ Manejo de callbacks para comunicar la acción del `ViewHolder` al `Adapter`.
+
 ✅ Inserción de nuevos usuarios mediante un `FloatingActionButton` (`notifyItemInserted`).
+
 ✅ Eliminación y Edición de usuarios mediante el menú de `long click` (`notifyItemRemoved` y `notifyItemChanged`).
+
 ✅ Validación de la posición con `bindingAdapterPosition != RecyclerView.NO_POSITION`.
+
 
 ### Tecnologías Utilizadas
 
