@@ -1,15 +1,77 @@
-<resources>
-    <string name="app_name">Juego de Colores</string>
-    <string name="welcome_title">Bienvenido</string>
-    <string name="game_rules">Presiona el botón que coincida con el color mostrado. Tienes 30 segundos para obtener el mayor puntaje.</string>
-    <string name="ok">OK</string>
-    <string name="start_game">Iniciar Juego</string>
-    <string name="current_score">Puntaje: %d</string>
-    <string name="time_remaining">Tiempo: %d s</string>
-    <string name="time_up">¡Tiempo Agotado!</string>
-    <string name="correct">¡Correcto!</string>
-    <string name="incorrect">Incorrecto</string>
-    <string name="final_score">Puntaje Final: %d</string>
-    <string name="high_score">Puntaje Más Alto: %d</string>
-    <string name="replay">Volver a Jugar</string>
-</resources>
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <View
+        android:id="@+id/color_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/score_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/color_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/time_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/score_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/red_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:text="Rojo"
+        app:layout_constraintTop_toBottomOf="@id/time_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/green_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="Verde"
+        app:layout_constraintTop_toBottomOf="@id/time_text_view"
+        app:layout_constraintStart_toEndOf="@id/red_button"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <Button
+        android:id="@+id/blue_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="Azul"
+        app:layout_constraintTop_toBottomOf="@id/red_button"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/yellow_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/yellow"
+        android:text="Amarillo"
+        app:layout_constraintTop_toBottomOf="@id/green_button"
+        app:layout_constraintStart_toEndOf="@id/blue_button"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
