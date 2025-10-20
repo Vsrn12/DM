@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id 'kotlin-kapt'  // Añadido para procesar anotaciones de Room
 }
 
 android {
@@ -36,11 +37,17 @@ android {
 }
 
 dependencies {
-
+    // Dependencias existentes
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Añadidas: Room y soporte para corutinas
+    implementation "androidx.room:room-runtime:2.6.1"
+    implementation "androidx.room:room-ktx:2.6.1"  // Para soporte de corutinas en Room
+    kapt "androidx.room:room-compiler:2.6.1"       // Procesador de anotaciones para Room
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1"  // Corutinas para Kotlin
 }
