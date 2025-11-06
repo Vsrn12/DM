@@ -1,78 +1,73 @@
-# Práctica 5: Fragments y Navegación
+# Práctica 5: Interfaces Estáticas en Flutter
 
 ## Descripción
-Esta práctica consiste en resolver un ejercicio de navegación entre fragments en Android utilizando Kotlin y Android Studio, implementando paso de datos con Bundle, comunicación bidireccional entre fragments y manejo manual de navegación sin Navigation Component.
+Esta práctica consiste en crear tres interfaces gráficas estáticas en **Flutter** utilizando **Dart**, sin lógica funcional ni navegación entre pantallas. El objetivo es dominar el uso de widgets básicos como `Text`, `Image`, `Column`, `Row`, `Padding`, `Container`, `Scaffold` y `AppBar`, organizando el diseño de forma clara y visualmente atractiva.
+
+Se implementa una **aplicación personal** con tres pantallas independientes que representan: bienvenida, perfil personal y hobbies.
+
+---
 
 ## Ejercicio Implementado
+### Aplicación Personal en Flutter (3 Pantallas Estáticas)
 
-### Configurador de Pedido de Comida (4 Fragments)
-Sistema completo de configuración de pedido paso a paso con navegación manual entre fragments, permitiendo seleccionar comida, agregar extras, revisar el pedido completo y confirmar o editar.
+Sistema visual completo de una app personal con tres pantallas diferenciadas, diseñadas con widgets básicos y organización profesional del layout.
 
-**Características:**
-* Navegación manual paso a paso con 4 fragments diferentes
-* Selección de comida principal mediante RadioGroup
-* Selección múltiple de extras mediante CheckBox 
-* Resumen completo del pedido antes de confirmar
-* Opciones de confirmar pedido o regresar a editar manteniendo datos
-* Comunicación bidireccional entre fragments con setFragmentResult
+### Características:
 
-**Funcionalidades:**
-* ✅ Navegación manual con FragmentManager
-* ✅ Paso de datos hacia adelante con Bundle y arguments
-* ✅ Comunicación de regreso con setFragmentResult y setFragmentResultListener
-* ✅ Restauración de datos al editar pedido
-* ✅ Uso de popBackStack para navegación hacia atrás
-* ✅ Validación de selecciones antes de continuar
-* ✅ Mensajes Toast informativos en acciones clave
+* 3 pantallas independientes con diseño personalizado  
+* Uso de `Scaffold` y `AppBar` en cada pantalla  
+* Diseño responsive con `Center`, `Padding`, `SizedBox`  
+* Imágenes desde internet con `Image.network`  
+* Estructura modular con archivos Dart separados  
 
-**Funcionalidades Avanzadas:**
-* ✅ FragmentResultListener para recibir datos editados
-* ✅ Bundle para pasar múltiples datos entre fragments
-* ✅ RadioGroup para selección única de comida
-* ✅ CheckBox para selección múltiple de extras
-* ✅ FragmentManager manual sin dependencias adicionales
-* ✅ PopBackStack múltiple para regresar dos pantallas atrás
-* ✅ Temas de color diferenciados por pantalla
+---
+
+### Funcionalidades:
+
+* Pantalla de bienvenida con botón inactivo  
+* Perfil personal con foto, nombre, descripción y contacto  
+* Lista de hobbies con íconos y descripciones  
+* Uso de `Row` y `Column` para organizar contenido  
+* Estilos personalizados: colores, fuentes, bordes  
+* `Container` decorado con sombras y bordes redondeados  
+* `CircleAvatar` para íconos y foto de perfil  
+
+---
+
+### Funcionalidades Avanzadas:
+
+* Separación clara de responsabilidades por archivo  
+* Uso de métodos auxiliares reutilizables (`_buildContactRow`, `_buildHobbyCard`)  
+* Imágenes de perfil desde URL externa  
+* Diseño tipo tarjeta (`Card`) con `Container` personalizado  
+* Colores temáticos por pantalla (azul, verde, naranja)  
+* Texto multilínea con `TextAlign.center`  
+* `ElevatedButton` estilizado con padding y color  
+
+---
 
 ## Tecnologías Utilizadas
 
-**Framework y Lenguaje**
-* Android SDK
-* Kotlin
-* Android Studio
+### Framework y Lenguaje
+* **Flutter SDK**  
+* **Dart**  
+* **Android Studio**
 
-**Componentes Android**
-* **Fragment**: Pantallas modulares y reutilizables de UI
-* **FragmentManager**: Gestión manual de transacciones de fragments
-* **FragmentTransaction**: Control de navegación entre fragments
-* **Bundle**: Contenedor de datos para paso entre fragments
-* **FragmentResult**: Comunicación bidireccional moderna entre fragments
+### Widgets Flutter
 
-**Elementos de UI**
-* **RadioGroup/RadioButton**: Selección única de comida
-* **CheckBox**: Selección múltiple de extras
-* **TextView**: Visualización de información y resúmenes
-* **Button**: Controles de navegación y acciones
-* **Toast**: Mensajes informativos emergentes
-* **LinearLayout**: Layouts organizados verticalmente
-* **FrameLayout**: Contenedor principal para fragments
+* `Scaffold`: Estructura base de pantalla  
+* `AppBar`: Barra superior con título  
+* `Column` / `Row`: Organización vertical y horizontal  
+* `Container`: Contenedor decorativo con bordes, color y padding  
+* `Padding`: Espaciado interno  
+* `Center`: Centrado de contenido  
+* `SizedBox`: Espaciado controlado  
+* `Text`: Texto personalizado con estilos  
+* `Image.network`: Carga de imágenes desde internet  
+* `ElevatedButton`: Botón estilizado  
+* `CircleAvatar`: Íconos circulares con fondo de color  
+* `Icon`: Íconos del sistema (Material Design)  
 
-## Estructura del Proyecto
-
-```
-ConfiguradorPedido/
-├── java/com/example/a5/
-│   ├── MainActivity.kt                  
-│   ├── InicioFragment.kt                  
-│   ├── SeleccionComidaFragment.kt       
-│   ├── SeleccionExtrasFragment.kt        
-│   └── ResumenPedidoFragment.kt          
-├── res/layout/
-│   ├── activity_main.xml                 
-│   ├── fragment_inicio.xml               
-│   ├── fragment_seleccion_comida.xml     
-│   ├── fragment_seleccion_extras.xml      
-│   └── fragment_resumen_pedido.xml        
-```
+---
 
 **Autor:** Delgado Chipana Piero Adrián
