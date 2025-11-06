@@ -1,4 +1,4 @@
-# Práctica 7: Interfaces Estáticas en Flutter
+# Práctica 6: Interfaces Estáticas en Flutter
 
 ## Descripción
 Esta práctica consiste en crear tres interfaces gráficas estáticas en **Flutter** utilizando **Dart**, sin lógica funcional ni navegación entre pantallas. El objetivo es dominar el uso de widgets básicos como `Text`, `Image`, `Column`, `Row`, `Padding`, `Container`, `Scaffold` y `AppBar`, organizando el diseño de forma clara y visualmente atractiva.
