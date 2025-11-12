@@ -1,215 +1,176 @@
-# Práctica: Navegación Inferior (BottomNavigationBar) en Flutter
+# Práctica: Listas Dinámicas y CRUD Local con Provider en Flutter
 
 ## Descripción
-Esta práctica implementa un sistema de navegación por pestañas usando BottomNavigationBar en Flutter, comprendiendo la relación entre pantallas, navegación, estado y comunicación entre componentes.
+Esta práctica consiste en crear una aplicación Flutter que permite gestionar usuarios (agregar, editar y eliminar) utilizando el patrón arquitectónico MVVM con Provider para el manejo del estado. La aplicación implementa un CRUD completo en memoria sin necesidad de base de datos, enfocándose en buenas prácticas de desarrollo móvil.
 
-## Ejercicios Implementados
+## Objetivos
 
-### 1. Navegación con BottomNavigationBar
-Sistema de navegación con cuatro pestañas principales: Inicio, Usuarios, Configuración y Perfil.
+### Objetivo General
+Crear una aplicación Flutter que permite agregar, editar y eliminar usuarios utilizando el patrón MVVM con Provider, reforzando el manejo del estado, la UI dinámica y el trabajo con formularios.
 
-**Características:**
-* Barra de navegación inferior fija
-* Cuatro pestañas independientes
-* Cambio de vista sin recargar la aplicación
-* Índice de selección controlado por estado
-* Separación modular de componentes
+### Objetivos Específicos
+- Aplicar el patrón MVVM para separar la lógica de negocio y la interfaz
+- Implementar Provider para manejar el estado de forma eficiente
+- Usar componentes interactivos como RadioButton y Switch
+- Comprender cómo funcionan las listas dinámicas en Flutter (ListView.builder)
 
-**Funcionalidades:**
-* Navegación fluida entre pestañas
-* Indicador visual de pestaña activa
-* Iconos representativos para cada sección
-* Estado persistente durante la navegación
+## Conceptos Implementados
 
-### 2. Perfil con Edición y Comunicación entre Pantallas
-Tab de perfil con navegación a pantalla secundaria para editar información del usuario y retorno de datos.
+### Patrón MVVM (Model-View-ViewModel)
+Arquitectura que separa la vista (UI) de la lógica (ViewModel), facilitando la reutilización del código y el mantenimiento de la aplicación.
 
-**Características:**
-* Pantalla de perfil con información del usuario
-* Botón de navegación a pantalla de edición
-* TextField para captura de nombre
-* Retorno de datos usando Navigator.pop()
-* Actualización automática de UI con setState()
+### Provider
+Librería oficial recomendada por Flutter para manejar el estado. Permite que la vista se actualice automáticamente cuando el ViewModel notifica un cambio, usando ChangeNotifier.
 
-**Funcionalidades Avanzadas:**
-* Comunicación bidireccional entre pantallas
-* Paso de datos mediante Navigator
-* Validación de datos recibidos
-* Actualización dinámica de estado
-* Liberación correcta de recursos (dispose)
-
-### Componentes Flutter
-* **StatefulWidget**: Manejo de estado mutable
-* **StatelessWidget**: Componentes sin estado
-* **BottomNavigationBar**: Barra de navegación inferior
-* **Navigator**: Sistema de navegación entre pantallas
-* **TextField**: Captura de entrada de usuario
-* **TextEditingController**: Control de campos de texto
-* **MaterialPageRoute**: Transiciones entre pantallas
-
-### Conceptos Aplicados
-* Gestión de estado con setState()
-* Navegación push y pop
-* Comunicación entre pantallas
-* Ciclo de vida de widgets
-* Paso de parámetros entre rutas
+### CRUD Local
+Operaciones básicas de Create (Crear), Read (Leer), Update (Actualizar) y Delete (Eliminar) realizadas en memoria sin persistencia de datos.
 
 ## Estructura del Proyecto
 
 ```
-lib/
-├── main.dart                      # Punto de entrada
-├── screens/
-│   ├── home_page.dart            # Pantalla principal con BottomNavigationBar
-│   ├── inicio_tab.dart           # Tab de inicio
-│   ├── usuarios_tab.dart         # Tab de usuarios
-│   ├── configuracion_tab.dart    # Tab de configuración
-│   ├── perfil_tab.dart           # Tab de perfil con navegación
-│   └── editar_perfil_screen.dart # Pantalla de edición de perfil
+gestion_usuarios_flutter/
+├── lib/
+│   ├── main.dart                    # Punto de entrada de la aplicación
+│   ├── models/
+│   │   └── user.dart                # Modelo de datos User
+│   ├── viewmodels/
+│   │   └── user_view_model.dart     # Lógica de negocio y estado
+│   └── views/
+│       ├── user_list_screen.dart    # Pantalla de lista de usuarios
+│       └── user_form_screen.dart    # Formulario para agregar/editar
+├── pubspec.yaml                     # Configuración y dependencias
+└── README.md                        # Este archivo
 ```
 
-## Características Técnicas
+## Funcionalidades Implementadas
 
-### BottomNavigationBar
-* Tipo: BottomNavigationBarType.fixed
-* Items: 4 pestañas
-* Color seleccionado: Azul
-* Color no seleccionado: Gris
-* Índice controlado por estado
+### Gestión de Usuarios
+- Agregar nuevos usuarios con nombre, género y estado activo
+- Editar usuarios existentes
+- Eliminar usuarios de la lista
+- Visualizar lista completa de usuarios registrados
+
+### Componentes Interactivos
+- TextFormField para captura de nombre con validación
+- RadioButton para selección de género (Masculino/Femenino)
+- Switch para indicar si el usuario está activo o inactivo
+- Formulario con validación completa
 
 ### Navegación
-* Push: MaterialPageRoute para nueva pantalla
-* Pop: Retorno con datos capturados
-* Async/await: Espera de resultado de navegación
-* Validación: Verificación de datos no nulos
+- Navegación entre pantallas usando Navigator
+- Paso de datos entre pantallas
+- Retorno de datos desde formulario a lista
+
+## Tecnologías Utilizadas
+
+### Framework y Lenguaje
+- Flutter SDK
+- Dart
 
 ### Gestión de Estado
-* StatefulWidget en componentes con estado mutable
-* setState() para actualización de UI
-* Variables privadas con guion bajo
-* dispose() para liberar recursos
+- Provider (ChangeNotifier)
+- ChangeNotifierProvider para inyección de dependencias
 
-## Buenas Prácticas Implementadas
+### Componentes Flutter
+- Scaffold: Estructura base de pantallas
+- AppBar: Barra superior con título
+- ListView.builder: Lista dinámica de usuarios
+- Card: Tarjetas para cada usuario
+- ListTile: Diseño de elementos de lista
+- Form: Formulario con validación
+- TextFormField: Campo de texto con validación
+- RadioListTile: Botones de opción
+- SwitchListTile: Interruptor de estado
+- FloatingActionButton: Botón flotante para agregar
+- IconButton: Botones de acción (editar/eliminar)
 
-* Separación de componentes en archivos individuales
-* Uso correcto de StatefulWidget y StatelessWidget
-* Liberación de recursos con dispose()
-* Validación de datos recibidos
-* Comentarios descriptivos en código
-* Nomenclatura clara y consistente
-* Estructura modular y escalable
+## Guía de Uso de la Aplicación
 
-## Respuestas
+### Agregar un Usuario
+1. Presionar el botón flotante (+) en la esquina inferior derecha
+2. Completar el formulario con nombre
+3. Seleccionar género usando los radio buttons
+4. Activar o desactivar el switch según corresponda
+5. Presionar "Guardar"
 
-### 1. ¿Por qué se recomienda usar un StatefulWidget para manejar el índice de la pestaña seleccionada?
+### Editar un Usuario
+1. En la lista de usuarios, presionar el icono de lápiz (editar)
+2. Modificar los datos necesarios en el formulario
+3. Presionar "Actualizar"
 
-Se recomienda usar StatefulWidget porque el índice de la pestaña seleccionada es un valor que cambia durante la ejecución de la aplicación. Cada vez que el usuario toca una pestaña diferente, necesitamos actualizar la UI para mostrar el contenido correspondiente. StatefulWidget permite:
+### Eliminar un Usuario
+1. En la lista de usuarios, presionar el icono de papelera (eliminar)
+2. El usuario se eliminará inmediatamente de la lista
 
-* Almacenar el índice actual en una variable de estado
-* Usar setState() para notificar al framework que debe reconstruir el widget
-* Mantener el estado entre reconstrucciones del widget
-* Reflejar cambios visuales inmediatos en la interfaz
+## Patrón de Arquitectura
 
-Si usáramos StatelessWidget, no podríamos cambiar el índice seleccionado ni actualizar la vista mostrada.
+### Model (Modelo)
+Representa los datos de la aplicación. En este caso, la clase User contiene:
+- nombre: String
+- genero: String
+- activo: bool
 
-### 2. ¿Qué ventajas ofrece separar cada pestaña en su propio widget o pantalla?
+### View (Vista)
+Las pantallas que muestran la interfaz de usuario:
+- UserListScreen: Muestra la lista de usuarios
+- UserFormScreen: Formulario para crear/editar usuarios
 
-La separación de pestañas en widgets individuales ofrece múltiples ventajas:
+### ViewModel
+UserViewModel gestiona la lógica de negocio:
+- Mantiene la lista de usuarios
+- Proporciona métodos para agregar, editar y eliminar
+- Notifica a las vistas cuando hay cambios (notifyListeners)
 
-**Organización:** Código más limpio y fácil de mantener con archivos separados por responsabilidad.
+## Flujo de Datos
 
-**Reutilización:** Los widgets separados pueden ser utilizados en otras partes de la aplicación si es necesario.
+1. El usuario interactúa con la Vista (View)
+2. La Vista llama a métodos del ViewModel
+3. El ViewModel modifica el Modelo
+4. El ViewModel notifica los cambios (notifyListeners)
+5. Provider actualiza automáticamente todas las Vistas que escuchan
 
-**Escalabilidad:** Facilita agregar nuevas funcionalidades a cada pestaña sin afectar las demás.
+## Validaciones Implementadas
 
-**Trabajo en equipo:** Diferentes desarrolladores pueden trabajar en pestañas distintas simultáneamente.
+### Formulario de Usuario
+- Nombre: Campo obligatorio, no puede estar vacío
+- Género: Selección obligatoria mediante RadioButton
+- Estado Activo: Valor booleano con Switch
 
-**Debugging:** Errores en una pestaña no afectan directamente a las otras, facilitando la identificación de problemas.
+## Actividades Complementarias Propuestas
 
-**Testing:** Cada componente puede ser probado de forma independiente.
+1. Agregar campo de edad con validación numérica
+2. Implementar campo de correo electrónico con validación de formato
+3. Agregar filtro para mostrar solo usuarios activos
+4. Implementar búsqueda de usuarios por nombre
+5. Agregar confirmación antes de eliminar un usuario
+6. Implementar persistencia local con SharedPreferences o SQLite
 
-**Rendimiento:** Flutter solo reconstruye el widget que cambió, no toda la aplicación.
+## Preguntas de Reflexión
 
-### 3. ¿Cómo cambia la navegación entre pantallas al usar rutas nombradas en lugar de Navigator.push()?
+### ¿Qué ventajas ofrece usar Provider frente a setState()?
+Provider permite compartir estado entre múltiples widgets sin necesidad de pasar datos manualmente. Además, solo reconstruye los widgets que realmente necesitan actualizarse, mejorando el rendimiento.
 
-Las rutas nombradas ofrecen un enfoque diferente a la navegación directa:
+### ¿Por qué es importante usar ChangeNotifier en el ViewModel?
+ChangeNotifier permite que el ViewModel notifique a sus oyentes cuando hay cambios en el estado, lo que desencadena automáticamente la reconstrucción de los widgets que dependen de ese estado.
 
-**Con Navigator.push():**
-* Se crea la ruta directamente en el punto de navegación
-* Requiere importar la clase de la pantalla destino
-* Mayor acoplamiento entre componentes
-* Dificulta la navegación profunda (deep linking)
+### ¿Qué sucedería si no se llamara a notifyListeners()?
+Las vistas no se actualizarían automáticamente cuando cambie el estado. Los datos cambiarían en el ViewModel pero la UI no reflejaría esos cambios hasta que se forzara una reconstrucción manual.
 
-**Con rutas nombradas:**
-* Se definen todas las rutas en un solo lugar (MaterialApp)
-* Se navega usando strings como identificadores
-* Menor acoplamiento, las pantallas no necesitan conocerse entre sí
-* Facilita la implementación de deep linking y navegación programática
-* Permite pasar argumentos de forma estructurada
-* Mejor organización para aplicaciones grandes
+## Ventajas del Patrón MVVM
 
-**Ejemplo:**
-```dart
-// Sin rutas nombradas
-Navigator.push(context, MaterialPageRoute(builder: (context) => EditarPerfilScreen()));
+- Separación clara de responsabilidades
+- Código más mantenible y testeable
+- Reutilización de ViewModels
+- Facilita el trabajo en equipo
+- Mejor organización del proyecto
 
-// Con rutas nombradas
-Navigator.pushNamed(context, '/editar-perfil');
-```
+## Notas Importantes
 
-### 4. ¿De qué forma el uso de Navigator.pop(context, data) facilita la comunicación entre pantallas?
+- Los datos se almacenan solo en memoria, se pierden al cerrar la app
+- No se implementa persistencia de datos en esta versión
+- La validación es básica, puede extenderse según necesidades
+- El código está comentado para facilitar el aprendizaje
 
-Navigator.pop(context, data) facilita la comunicación de retorno mediante:
 
-**Retorno de valores:** Permite enviar datos desde la pantalla actual hacia la pantalla anterior que la invocó.
-
-**Patrón async/await:** La pantalla que hace push puede esperar el resultado usando await, haciendo el código más legible y secuencial.
-
-**Validación de datos:** La pantalla receptora puede validar si recibió datos (null check) antes de procesarlos.
-
-**Comunicación unidireccional clara:** Establece un flujo de datos definido: pantalla A → pantalla B → retorno a pantalla A con datos.
-
-**Sin necesidad de estado global:** No requiere providers, bloc u otros gestores de estado complejos para comunicación simple.
-
-**Ejemplo práctico:**
-```dart
-// Pantalla A espera resultado
-final nombre = await Navigator.push(...);
-if (nombre != null) {
-  setState(() { _nombreUsuario = nombre; });
-}
-
-// Pantalla B retorna dato
-Navigator.pop(context, _controller.text);
-```
-
-Este patrón es ideal para formularios, configuraciones y capturas de datos puntuales.
-
-### 5. ¿Qué posibles mejoras o extensiones podrías agregar a esta aplicación para hacerla más completa?
-
-**Persistencia de datos:**
-* Usar SharedPreferences para guardar el nombre del usuario
-* Implementar base de datos local con SQLite o Hive
-
-**Validaciones mejoradas:**
-* Agregar validación de formularios en TextField
-* Mensajes de error personalizados
-* Longitud mínima y máxima de nombre
-
-**Funcionalidades adicionales:**
-* Agregar foto de perfil con selección de imagen
-* Implementar más campos editables (correo, teléfono, bio)
-* Sistema de autenticación
-
-**UI/UX mejorada:**
-* Animaciones en transiciones de navegación
-* Temas claro y oscuro
-* Diseño más elaborado con cards y avatares
-
-**Rutas nombradas:**
-* Implementar sistema de rutas nombradas para mejor organización
-* Manejo de rutas desconocidas
-
----
-
-**Autor:** Delgado Chipana Piero Adrián  
+## Autor
+Delgado Chipana Piero Adrián
