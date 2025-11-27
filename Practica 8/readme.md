@@ -3,17 +3,7 @@
 ## Descripción
 Esta práctica consiste en resolver un ejercicio de navegación entre fragments en Android utilizando Kotlin y Android Studio, implementando paso de datos con Bundle, comunicación bidireccional entre fragments y manejo manual de navegación sin Navigation Component.
 
-## Ejercicio Implementado
-
-### Configurador de Pedido de Comida (4 Fragments)
-Sistema completo de configuración de pedido paso a paso con navegación manual entre fragments, permitiendo seleccionar comida, agregar extras, revisar el pedido completo y confirmar o editar.
-
-**Características:**
-* Navegación manual paso a paso con 4 fragments diferentes
-* Selección de comida principal mediante RadioGroup
-* Selección múltiple de extras mediante CheckBox 
-* Resumen completo del pedido antes de confirmar
-* Opciones de confirmar pedido o regresar a editar manteniendo datos
+nteniendo datos
 * Comunicación bidireccional entre fragments con setFragmentResult
 
 **Funcionalidades:**
