@@ -1,15 +1,6 @@
 # Práctica: Listas Dinámicas y CRUD Local con Provider en Flutter
 
-## Descripción
-Esta práctica consiste en crear una aplicación Flutter que permite gestionar usuarios (agregar, editar y eliminar) utilizando el patrón arquitectónico MVVM con Provider para el manejo del estado. La aplicación implementa un CRUD completo en memoria sin necesidad de base de datos, enfocándose en buenas prácticas de desarrollo móvil.
-
-## Objetivos
-
-### Objetivo General
-Crear una aplicación Flutter que permite agregar, editar y eliminar usuarios utilizando el patrón MVVM con Provider, reforzando el manejo del estado, la UI dinámica y el trabajo con formularios.
-
-### Objetivos Específicos
-- Aplicar el patrón MVVM para separar la lógica de negocio y la interfaz
+ógica de negocio y la interfaz
 - Implementar Provider para manejar el estado de forma eficiente
 - Usar componentes interactivos como RadioButton y Switch
 - Comprender cómo funcionan las listas dinámicas en Flutter (ListView.builder)
