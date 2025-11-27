@@ -1,8 +1,8 @@
 /*
  * Descripción: Pantalla de Login con validaciones usando Form y GlobalKey
  * Autor: Delgado Chipana Piero Adrián
- * Fecha creación: 2025-01-24
- * Fecha última modificación: 2025-01-24
+ * Fecha creación: 2025-11-27
+ * Fecha última modificación: 2025-11-27
  */
 
 import 'package:flutter/material.dart';
