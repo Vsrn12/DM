@@ -5,7 +5,7 @@
  * Fecha última modificación: 2024-11-27
  */
 
-package com.example.gestiontortas
+package com.example.afinal
 
 import android.content.Intent
 import android.os.Bundle

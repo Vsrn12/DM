@@ -2,10 +2,10 @@
  * Descripción: Adapter para mostrar lista de insumos con nombre y precio
  * Autor: Delgado Chipana Piero Adrián
  * Fecha creación: 2024-11-20
- * Fecha última modificación: 2024-11-27
+ * Fecha última modificación: 2024-11-28
  */
 
-package com.example.gestiontortas
+package com.example.afinal
 
 import android.content.Context
 import android.view.LayoutInflater

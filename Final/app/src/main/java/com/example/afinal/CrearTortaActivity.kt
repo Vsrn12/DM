@@ -2,10 +2,10 @@
  * Descripción: Pantalla para crear una torta con selección de opciones
  * Autor: Delgado Chipana Piero Adrián
  * Fecha creación: 2024-11-20
- * Fecha última modificación: 2024-11-27
+ * Fecha última modificación: 2024-11-28
  */
 
-package com.example.gestiontortas
+package com.example.afinal
 
 import android.os.Bundle
 import android.widget.*
